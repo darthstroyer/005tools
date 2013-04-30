@@ -1,0 +1,50 @@
+#---------------------------------------------------------------------------------
+# TARGET is the name of the output
+# SOURCES is a list of directories containing source code
+# INCLUDES is a list of directories containing extra header files
+#---------------------------------------------------------------------------------
+TARGET   := 005tools.exe
+SOURCES  := source
+INCLUDES ?= -I./include 
+
+#---------------------------------------------------------------------------------
+# Options 
+#---------------------------------------------------------------------------------
+CC       = i686-w64-mingw32-gcc
+CFLAGS   = -Wall -g 
+
+CXX      = i686-w64-mingw32-g++
+CXXFLAGS = -Wall -g -static -std=gnu++0x -o $(TARGET)
+
+COBJS     = source/hid-win32.o
+CPPOBJS   = source/main.o
+OBJS      = $(COBJS) $(CPPOBJS)
+
+#    LD=i586-mingw32msvc-ld
+#    AR=i586-mingw32msvc-ar
+#    AS=i586-mingw32msvc-as
+#    NM=i586-mingw32msvc-nm
+#    STRIP=i586-mingw32msvc-strip
+#    RANLIB=i586-mingw32msvc-ranlib
+#    DLLTOOL=i586-mingw32msvc-dlltool
+#    OBJDUMP=i586-mingw32msvc-objdump
+#    RC=i586-mingw32msvc-windres
+
+#---------------------------------------------------------------------------------
+# Any additional libraries
+#---------------------------------------------------------------------------------
+LIBS    = -lsetupapi
+
+all: $(OBJS)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ $(LIBS) -o $(TARGET)
+
+$(COBJS): %.o: %.c
+	$(CC) $(CFLAGS) -c $(INCLUDES) $< -o $@
+
+$(CPPOBJS): %.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $(INCLUDES) $< -o $@
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+.PHONY: clean
