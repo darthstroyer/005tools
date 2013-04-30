@@ -34,7 +34,7 @@ write then you can just use the official software in Windows to write your backu
 do come across a game that won't work with any function of this application, please open a new
 issue, I may be able to fix it.
 
-Games are EUR unless otherwise stated:
+Games are EUR unless otherwise stated (**R** = READ, **E** = ERASE, **W** = WRITE).
 
 | 3DS GAME                   | Size  | R | E | W |
 |:---------------------------|:-----:|:-:|:-:|:-:|
@@ -57,9 +57,6 @@ Games are EUR unless otherwise stated:
 | Feel The Magic XY:XX       | 8kB¹  | ✔ | ✔ | ✔ |
 | Metroid Prime Hunters: FH² | 512B¹ | ✔ | ✗ | ✗ |
 
-**TABLE KEY**
-**R** = READ, **E** = ERASE, **W** = WRITE
-
 ¹ Save size not detected because the R4i firmware doesn't detect it, this appears to be due to the
-  save type (EEPROM vs Flash) 
+  save type (EEPROM vs Flash)  
 ² I suspect that, but haven't tested, the official software will not write to this card either.
