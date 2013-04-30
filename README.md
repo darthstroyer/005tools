@@ -1,3 +1,19 @@
+Introduction
+===================
+
+A couple of years ago, I received an R4i Save Dongle from the R4i team as part of a promotion they
+were running.  As somebody who loans their games to friends often, it's come in handy quite a few
+times.  Being a mostly-Linux user, however, I was frustrated by not being able to back up my 3DS 
+saves without first rebooting into Windows; Wine doesn't appear to support HID devices and there
+were some issues (possibly timing-related) when using the device in a virtual machine.
+
+So, I set to work reversing the dongle's official software so I could write my own implementation
+that would work across platforms.
+
+**005Tools** currently only works with the _R4i Save Dongle_, but it is written with extensibility
+in mind.  Since that's the only device I have, though, I doubt it will be supporting any other
+devices in the near future.
+
 Changelog v0.1b
 ===================
 
@@ -34,7 +50,7 @@ write then you can just use the official software in Windows to write your backu
 do come across a game that won't work with any function of this application, please open a new
 issue, I may be able to fix it.
 
-Games are EUR unless otherwise stated (**R** = READ, **E** = ERASE, **W** = WRITE).
+Games are EUR unless otherwise stated ( **R** = READ, **E** = ERASE, **W** = WRITE ).
 
 | 3DS GAME                   | Size  | R | E | W |
 |:---------------------------|:-----:|:-:|:-:|:-:|
