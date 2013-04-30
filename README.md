@@ -31,28 +31,31 @@ diff -qs on the uploaded data and the read data.
 
 As a general rule, there aren't any problems reading, so if you come across a game that won't
 write then you can just use the official software in Windows to write your backup.  If you
-do come across a game that won't work with any function of this application, please let me
-know and I may be able to fix it.
+do come across a game that won't work with any function of this application, please open a new
+issue, I may be able to fix it.
 
 Games are EUR unless otherwise stated:
 
-3DS GAME                    Size    R   E   W   P
-Mario Kart 7                512kB   ✔   ✔   ✔   ✔
-Star Fox 64 3D              128kB   ✔   ✔   ✔   ✔
-Theatrhythm Final Fantasy   128kB   ✔   ✔   ✔   ✔  
-Ocarina of Time 3D          128kB   ✔   ✔   ✔   ✔
-Pilotwings Resort           128kB   ✔   ✔   ✔   ✔
-Super Street Figher IV      128kB   ✔   ✔   ✔   ✔
-New Super Mario Bros. 2     128kB   ✔   ✔   ✔   ✔
+| 3DS GAME                   | Size  | R | E | W | P |
+|:---------------------------|:-----:|:-:|:-:|:-:|:-:|
+| Mario Kart 7               | 512kB | ✔ | ✔ | ✔ | ✔ |
+| Star Fox 64 3D             | 128kB | ✔ | ✔ | ✔ | ✔ |
+| Theatrhythm Final Fantasy  | 128kB | ✔ | ✔ | ✔ | ✔ |  
+| Ocarina of Time 3D         | 128kB | ✔ | ✔ | ✔ | ✔ |
+| Pilotwings Resort          | 128kB | ✔ | ✔ | ✔ | ✔ |
+| Super Street Figher IV     | 128kB | ✔ | ✔ | ✔ | ✔ |
+| New Super Mario Bros. 2    | 128kB | ✔ | ✔ | ✔ | ✔ |
+| Mario Kart 7               | 512kB | ✔ | ✔ | ✔ | ✔ |
 
-DS GAME                     Size    R   E   W   P
-Nintendogs (Labrador)       256kB   ✔   ✔   ✔   ✔
-Fire Emblem Shadow Dragon   256kB   ✔   ✔   ✔   ✔
-Animal Crossing Wild World  256kB   ✔   ✔   ✔   ✔
-New Super Mario Bros.       8kB¹    ✔   ✔   ✔   ✔
-Super Mario 64 DS           8kB¹    ✔   ✔   ✔   ✔
-Feel The Magic XY:XX        8kB¹    ✔   ✔   ✔   ✔
-Metroid Prime Hunters: FH²  512B¹   ✔   ✗   ✗   ✗
+| DS GAME                    | Size  | R | E | W | P |
+|:---------------------------|:-----:|:-:|:-:|:-:|:-:|
+| Nintendogs (Labrador)      | 256kB | ✔ | ✔ | ✔ | ✔ |
+| Fire Emblem Shadow Dragon  | 256kB | ✔ | ✔ | ✔ | ✔ |
+| Animal Crossing Wild World | 256kB | ✔ | ✔ | ✔ | ✔ |
+| New Super Mario Bros.      | 8kB¹  | ✔ | ✔ | ✔ | ✔ |
+| Super Mario 64 DS          | 8kB¹  | ✔ | ✔ | ✔ | ✔ |
+| Feel The Magic XY:XX       | 8kB¹  | ✔ | ✔ | ✔ | ✔ |
+| Metroid Prime Hunters: FH² | 512B¹ | ✔ | ✗ | ✗ | ✗ |
 
 ¹ Save size not detected because the R4i firmware doesn't detect it, this appears to be due to the
   save type (EEPROM vs Flash)
