@@ -40,6 +40,7 @@
 #ifdef __linux__
   #include <csignal>
   #include <termios.h>
+  #include <unistd.h>
 #else
   #include <windows.h>
 #endif
