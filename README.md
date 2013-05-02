@@ -14,8 +14,14 @@ that would work across platforms.
 in mind.  Since that's the only device I have, though, I doubt it will be supporting any other
 devices in the near future.
 
-Changelog v0.1b
+Changelog 
 ===================
+
+### v0.1c
+
+ * Now compiles with gcc 4.7
+
+### v0.1b
 
  * Writing to 3DS cards works now
  * Improved save size detection for 3DS cards
