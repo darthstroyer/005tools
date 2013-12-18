@@ -151,14 +151,10 @@ void draw_progress(double total, double current) {
     printf("%u / %u bytes", (int)current, (int)total);
 #endif
 
-#ifdef __linux__
-    cout << endl;
-#else
-    cout << " ";
-#endif
-
     if (current != total)
         cout << "\b\r";
+    else
+        cout << "\n";
 }
 
 /* +--------------------------------------------------------------------+
