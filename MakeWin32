@@ -3,7 +3,7 @@
 # SOURCES is a list of directories containing source code
 # INCLUDES is a list of directories containing extra header files
 #---------------------------------------------------------------------------------
-TARGET   := 005tools.exe
+TARGET   := build/005tools.exe
 SOURCES  := source
 INCLUDES ?= -I./include 
 
@@ -14,7 +14,7 @@ CC       = i686-w64-mingw32-gcc
 CFLAGS   = -Wall -g 
 
 CXX      = i686-w64-mingw32-g++
-CXXFLAGS = -Wall -g -static -std=gnu++0x -o $(TARGET)
+CXXFLAGS = -Wall -g -static -std=c++0x -o $(TARGET)
 
 COBJS     = source/hid-win32.o
 CPPOBJS   = source/main.o
@@ -36,6 +36,7 @@ OBJS      = $(COBJS) $(CPPOBJS)
 LIBS    = -lsetupapi
 
 all: $(OBJS)
+	mkdir -p build
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ $(LIBS) -o $(TARGET)
 
 $(COBJS): %.o: %.c

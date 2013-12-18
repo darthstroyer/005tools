@@ -3,7 +3,8 @@
 # SOURCES is a list of directories containing source code
 # INCLUDES is a list of directories containing extra header files
 #---------------------------------------------------------------------------------
-TARGET   := 005tools
+
+TARGET   := build/005tools
 SOURCES  := source
 INCLUDES ?= -I./include `pkg-config libusb-1.0 --cflags`
 
@@ -26,6 +27,7 @@ OBJS      = $(COBJS) $(CPPOBJS)
 LIBS      = `pkg-config libusb-1.0 libudev --libs`
 
 all: $(OBJS)
+	mkdir -p build
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ $(LIBS) -o $(TARGET)
 
 $(COBJS): %.o: %.c
