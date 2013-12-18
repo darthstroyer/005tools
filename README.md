@@ -17,6 +17,11 @@ devices in the near future.
 Changelog 
 ===================
 
+### v0.1d
+ 
+ * Fix command line options that were broken in v0.1c
+ * Fix progress redrawing in Linux
+
 ### v0.1c
 
  * Now compiles with gcc 4.7
