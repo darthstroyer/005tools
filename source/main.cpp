@@ -174,7 +174,7 @@ void device_ops() {
     std::string firmware_output = opts_in["--output-firmware"].value;
 
     if (opts_in["--save-size"].value.length())
-        override_save_size = std::stoi(opts_in["--save-size"].value);
+        override_save_size = atoi(opts_in["--save-size"].value.c_str());
 
     if(!dev->found) {
         // Could try a different device here, such as the NDS Backup Adapter Plus
