@@ -11,3 +11,7 @@
 *.lai
 *.la
 *.a
+
+# Other binary files, e.g. dumps
+*.bin
+*.sav
