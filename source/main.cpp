@@ -24,7 +24,7 @@
     along with 005Tools.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#define APPVERSION "0.1c"
+#define APPVERSION "0.1d"
 #define APPNAME "005Tools"
 #define APPCMD "005tools"
 
@@ -84,12 +84,6 @@ const int ARG_ERASE    = 4;
 int arg_passed;
 string arg_filename;
 
-// Command line options
-string rom_header_output;
-string firmware_output;
-int override_save_size = 0; // Allow the user to override the detected save size
-bool output_key = false;
-
 struct cmd_opt {
     string short_name;
     string description;
@@ -103,7 +97,7 @@ map<string, cmd_opt> opts_in = {
     { "--help",           { "-?", "Shows this help", "", NULL } },
     { "--output-header",  { "-h", "Save game header from device to FILE", "FILE", true } },
     { "--output-firmware",{ "-f", "Save firmware information from device to FILE", "FILE", true } },
-    { "--key-file",       { "-k", "Specifies the encryption key file to either save to or use", "FILE", true } },
+//  { "--key-file",       { "-k", "Specifies the encryption key file to either save to or use", "FILE", true } },
     { "--save-size",      { "-s", "Override detected save size with BYTES", "BYTES", true } },
 };
 
@@ -112,6 +106,7 @@ struct command {
     string file1;
     string file2;
 };
+
 map<string, command> cmd_in = {
     { "info", { "Display information about the currently inserted game card" } },
     { "download", { "Downloads the currently inserted game card's save data and writes it to <filename>" } },
@@ -178,6 +173,13 @@ void device_ops() {
     hid_init();
     dev = new R4iSaveDongle;
 
+    int override_save_size = 0;
+    std::string rom_header_output = opts_in["--output-header"].value;
+    std::string firmware_output = opts_in["--output-firmware"].value;
+
+    if (opts_in["--save-size"].value.length())
+        override_save_size = std::stoi(opts_in["--save-size"].value);
+
     if(!dev->found) {
         // Could try a different device here, such as the NDS Backup Adapter Plus
         cout << "Device not found (protip: make sure the device is plugged in, and permissions are set)\n";
@@ -186,6 +188,7 @@ void device_ops() {
 
     // We found our device, let's give some confirmation
     cout << dev->name << " v" << dev->version << " found." << "\n";
+
 
     // Output firmware data to file for debugging, if requested
     if (firmware_output.length() > 0) {
@@ -387,8 +390,6 @@ int main(int argc, char *argv[]) {
                 }
                 else
                     opt.value = opt_val;
-
-                cout << opts_in["--save-size"].value << endl;
             }
         }
         else if (!cmd_set) {
