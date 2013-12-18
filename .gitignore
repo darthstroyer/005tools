@@ -15,3 +15,6 @@
 # Other binary files, e.g. dumps
 *.bin
 *.sav
+
+# Ignore build/ directory
+build/*
