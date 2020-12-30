@@ -15,7 +15,7 @@ CC       ?= gcc
 CFLAGS   ?= -Wall -g 
 
 CXX      ?= g++
-CXXFLAGS ?= -Wall -g -std=c++0x -o $(TARGET)
+CXXFLAGS ?= -Wall -g -std=c++0x -pthread -o $(TARGET)
 
 COBJS     = source/hid.o
 CPPOBJS   = source/main.o source/tools.o
